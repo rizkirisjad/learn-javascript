@@ -1,3 +1,5 @@
+/** @format */
+
 // Lecture: Values and Variables
 let country = 'Indonesia';
 let continent = 'Asia';
@@ -27,4 +29,14 @@ console.log(population > finlandPopulation);
 let avgPopulation = 33000000;
 console.log(population < avgPopulation);
 const description =
-  'Indonesia is in Asia, and its 281,35 million people speak bahasa indonesia';
+  country +
+  ' is in ' +
+  continent +
+  ', and its' +
+  ' 281,35 million people speak ' +
+  language;
+console.log(description);
+
+//LECTURE: Strings and Template Literals
+const newDescription = `${country} is in ${continent}, and its 281,35 million people speak ${language}`;
+console.log(newDescription);
