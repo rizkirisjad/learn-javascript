@@ -1,3 +1,5 @@
+/** @format */
+
 // Coding Challenge #1
 // Mark and John are trying to compare their BMI (Body Mass Index), which is
 // calculated using the formula:
@@ -42,3 +44,28 @@ const BMI_john = MassJohn / (HeightJohn * HeightJohn);
 const MarkHigherBMI = BMI_mark > BMI_john;
 
 console.log(BMI_mark, BMI_john, MarkHigherBMI);
+
+/* Coding Challenge #2
+Use the BMI example from Challenge #1, and the code you already wrote, and
+improve it.
+Your tasks:
+
+1. Print a nice output to the console, saying who has the higher BMI. The message
+is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+2. Use a template literal to include the BMI values in the outputs. Example: "Mark's
+BMI (28.3) is higher than John's (23.9)!"
+Hint: Use an if/else statement 😉 */
+
+//* Data 1
+if (BMImark > BMIjohn) {
+  console.log(`Mark's BMI (${BMImark}) is higher than John's (${BMIjohn}) !`);
+} else {
+  console.log(`John's BMI (${BMIjohn}) is higher than Mark's (${BMImark}) !`);
+}
+
+//* Data 2
+if (BMI_mark > BMI_john) {
+  console.log(`Mark's BMI (${BMI_mark}) is higher than John's (${BMI_john}) !`);
+} else {
+  console.log(`John's BMI (${BMI_john}) is higher than Mark's (${BMI_mark}) !`);
+}
