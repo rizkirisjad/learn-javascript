@@ -142,6 +142,7 @@ if (numNeighbors === 1) {
 }
 
 // LECTURE: Logical Operators
+
 // 1. Comment out the previous code so the prompt doesn't get in the way
 // 2. Let's say Sarah is looking for a new country to live in. She wants to live in a
 // country that speaks english, has less than 50 million people and is not an
@@ -159,4 +160,35 @@ if (language === 'english' && population < 50 && !isIsland) {
   console.log(`You should live in ${country} :)`);
 } else {
   console.log(`${country} does not meet your criteria :(`);
+}
+
+// LECTURE: The switch Statement
+
+// 1. Use a switch statement to log the following string for the given 'language':
+// chinese or mandarin: 'MOST number of native speakers!'
+// spanish: '2nd place in number of native speakers'
+// english: '3rd place'
+// hindi: 'Number 4'
+// arabic: '5th most spoken language'
+// for all other simply log 'Great language too :D'
+
+switch (language) {
+  case 'Chinese':
+  case 'Mandarin':
+    console.log('MOST number of native speakers!');
+    break;
+  case 'Spanish':
+    console.log('2nd place in number of native speakers');
+    break;
+  case 'English':
+    console.log('3rd place');
+    break;
+  case 'Hindi':
+    console.log('Number 4');
+    break;
+  case 'Arabic':
+    console.log('5th most spoken language');
+    break;
+  default:
+    console.log('Great language too :D');
 }
