@@ -103,7 +103,7 @@ describePopulation('USA', 332);
 // 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
 // 2. Use the function to calculate the average for both teams
 // 3. Create a function 'checkWinner' that takes the average score of each team
-// as parameters ('avgDolhins' and 'avgKoalas'), and then logs the winner
+// as parameters ('avgDolphins' and 'avgKoalas'), and then logs the winner
 // to the console, together with the victory points, according to the rule above.
 // Example: "Koalas win (30 vs. 13)"
 // 4. Use the 'checkWinner' function to determine the winner for both Data 1 and
@@ -167,17 +167,17 @@ console.log(percentages);
 
 // LECTURE: Basic Array Operations (Methods)
 
-// 1. Create an array containing all the neighbouring countries of a country of your
-// choice. Choose a country which has at least 2 or 3 neighbours. Store the array
-// into a variable called 'neighbours'
-// 2. At some point, a new country called 'Utopia' is created in the neighbourhood of
-// your selected country. So add it to the end of the 'neighbours' array
+// 1. Create an array containing all the neighboring countries of a country of your
+// choice. Choose a country which has at least 2 or 3 neighbors. Store the array
+// into a variable called 'neighbors'
+// 2. At some point, a new country called 'Utopia' is created in the neighborhood of
+// your selected country. So add it to the end of the 'neighbors' array
 // 3. Unfortunately, after some time, the new country is dissolved. So remove it from
 // the end of the array
-// 4. If the 'neighbours' array does not include the country ‘Germany’, log to the
+// 4. If the 'neighbors' array does not include the country ‘Germany’, log to the
 // console: 'Probably not a central European country :D'
-// 5. Change the name of one of your neighbouring countries. To do that, find the
-// index of the country in the 'neighbours' array, and then use that index to
+// 5. Change the name of one of your neighboring countries. To do that, find the
+// index of the country in the 'neighbors' array, and then use that index to
 // change the array at that index position. For example, you can search for
 // 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
 
@@ -224,3 +224,62 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(bills, tips, totals);
+
+// LECTURE: Introduction to Objects
+
+// 1. Create an object called 'myCountry' for a country of your choice, containing
+// properties 'country', 'capital', 'language', 'population' and
+// 'neighbours' (an array like we used in previous assignments)
+
+const myCountry = {
+  country: 'Indonesia',
+  capital: 'Jakarta',
+  language: 'Bahasa Indonesia',
+  population: 275,
+  neighbors: ['Malaysia', 'Singapore', 'Vietnam'],
+
+  describe: function () {
+    console.log(
+      `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} neighboring countries and a capital called ${this.capital}.`
+    );
+  },
+
+  checkIsland: function () {
+    this.isIsland = this.neighbors.length === 0 ? true : false;
+    return this.isIsland;
+    // Even simpler version (see why this works...)
+    // this.isIsland = !Boolean(this.neighbours.length);
+  },
+};
+
+// LECTURE: Dot vs. Bracket Notation
+
+// 1. Using the object from the previous assignment, log a string like this to the
+// console: 'Finland has 6 million finnish-speaking people, 3 neighboring countries
+// and a capital called Helsinki.'
+// 2. Increase the country's population by two million using dot notation, and then
+// decrease it by two million using brackets notation.
+
+console.log(
+  `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} neighboring countries and a capital called ${myCountry.capital}`
+);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+myCountry['population'] -= 2;
+console.log(myCountry.population);
+
+// LECTURE: Object Methods
+
+// 1. Add a method called 'describe' to the 'myCountry' object. This method
+// will log a string to the console, similar to the string logged in the previous
+// assignment, but this time using the 'this' keyword.
+// 2. Call the 'describe' method
+// 3. Add a method called 'checkIsland' to the 'myCountry' object. This
+// method will set a new property on the object, called 'isIsland'.
+// 'isIsland' will be true if there are no neighboring countries, and false if
+// there are. Use the ternary operator to set the property.
+
+myCountry.describe();
+console.log(myCountry.checkIsland());
+console.log(myCountry);
